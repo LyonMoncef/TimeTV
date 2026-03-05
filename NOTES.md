@@ -11,4 +11,7 @@
 - Auto re-auth on token expiry (catch auth error, reset `_client`, retry)
 - `get_show_details` tool — fetch episodes list and metadata for a specific show
 - `get_user_profile` tool — expose `user.profile()` as an MCP tool
-- Discord/WhatsApp bot frontend using the same server
+- Signal adapter: needs bbernhard/signal-cli-rest-api docker image running; number must be registered
+- bot_core session memory is in-process only — restarting the bot resets all conversations
+- bot_core.chat() is synchronous; fine for personal use but will block the event loop under load
+- WhatsApp adapter (not yet implemented) — would need a WhatsApp Business API gateway
